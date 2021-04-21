@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	document.write("<h1>컴퓨터 가위,바위,보 맞추기</h1>");
+	
+	var game = prompt("가위,바위,보 중 선택하세요.","가위");   //입력받기
+	var gameNum;
+	
+ 	switch(game){
+	case "가위" : gameNum = 1; break;				//가위면 숫자1로 변환
+	case "바위" : gameNum = 2; break;				//
+	case "보" : gameNum = 3; break;				//
+	default:alert("잘못 작성했습니다.");
+	location.reload();
+	//document.write(gameNum);
+	} 
+ 	
+ 	var com = Math.ceil(Math.random()*3);  //1~3사이 난수 발생
+ /* 	switch(com){
+ 	case 1 : document.write("<img src = \"images/가위.jpg\">");break;
+ 	case 2 : document.write("<img src = \"images/바위.jpg\">");break;
+ 	case 3 : document.write("<img src = \"images/보.jpg\">");break;
+ 	} */
+ 	document.write("<img src = \"images/math_img_"+com+".jpg\">");
+ 	if(gameNum == com){
+ 		document.write("<img src = \"images/game_1.jpg\">");
+ 	}else{
+ 		document.write("<img src = \"images/game_2.jpg\">");
+ 	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

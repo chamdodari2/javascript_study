@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+
+<script>
+	$(function(){
+		//배역[],객체{"속성":"값","속성":"값","속성":"값"}
+		var obj =[
+			{"area":"서울"},
+			{"area":"부산"},
+			{"area":"전주"}
+		]
+
+	$(obj).each(function(i,o){
+		console.log(i+":",o);
+	});
+		console.log("===The End1===");
+		
+		$.each($("#menu2 li"),function(i,o){
+			console.log(i+":",o);
+		});
+////////////////////////////////////////////////////////////////책에없는거 if문		
+
+	var sublib = $("#menu2 li");
+	var liColor = [
+		{"color":"red"},
+		{"color":""},
+		{"color":"red"},
+		
+	]
+	
+		consol.log("===The Exd2 ===");
+		$.each($("#menu2 li"),function(i) {
+			if(i==1){
+				$(this).css("color","red");
+			}if(i==2){
+				$(this).css("color","blue");
+			}console.log(i+":",$(this));
+		});
+	
+		
+	});
+</script>
+
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu1">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+
+	</ul>
+	<ul id="menu2">
+		<li>내용1</li>
+		<li>내용1</li>
+		<li>내용1</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var t= "Hello Thank you good luck to you";
+	document.write("1. 전체 출력 : "+ t + "<br>");
+	document.write("2. 16번째 인덱스 글자 출력 : "+ t.charAt(16)+"<br>");
+	document.write("3. 문자열 왼쪽에서부터 제일 먼저 발견된 첫 'you'의 인덱스값(위치) 출력 : "+ t.indexOf("you")+"<br>");
+	document.write("4. 문자열 인덱스 16위치부터 검색해서 제일 먼저 발견된 'you'의 인덱스값 출력 : "+ t.indexOf("you", 16)+"<br>");
+	document.write("5. 문자열 오른쪽에서부터 왼쪽방향으로 제일 번저 발견된 'you'의 인덱스값 출력 : "+ t.lastIndexOf("you")+"<br>");
+	document.write("6. 문자열 인덱스 25번째부터 왼쪽방향으로 제일 번저 발견된 'you'의 인덱스값 출력 : "+ t.lastIndexOf("you",25)+"<br>");
+	document.write("7. 문자열 왼쪽에서부터 제일 먼저 발견된 'luck'과 일치되는 문자를 찾아 출력 : "+ t.match("luck")+"<br>");
+	document.write("8. 문자열 왼쪽에서부터 제일 먼저 발견된 'you'의 인덱스값을 반환 : "+ t.search("you")+"<br>");
+	document.write("9.  : "+ t.substring(6,12)+"<br>");
+	document.write("10. : "+ t.replace("you","me")+"<br>");
+	document.write("11.  : "+ t.toLocaleLowerCase()+"<br>");
+	document.write("12.  : "+ t.toUpperCase()+"<br>");
+	document.write("13.  : "+ t.length+"<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

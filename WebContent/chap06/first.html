@@ -1,0 +1,38 @@
+<!DOCTYPE html>  <!-- 이제 정적에서 동적으로 변경되는거당 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js" > </script>
+<script>
+	
+	//4. 함수정의 변수에하기
+	var fun = function func(){
+		$('#title').css("color","red"); 
+	}
+	//2. 함수정의
+	function func(){
+		$('#title').css("color","red"); /* 함수 정의만 해놓은것. 자동실행 ㄴㄴ 호출해야함 */
+	}
+	
+	//3.함수 호출
+	
+	$(func); /* //얘를 호출해달라 */
+	//5. 함수호출 2
+	
+	 $(function(){
+		$('#title').css("color","blue");});
+	
+	// 1. 기본틀이다. body 안에 있는 문서를 다 읽어들인다음 이걸  바로 수행하라는 뜻!! */
+	/* $(function(){
+		$('#title').css("color","red"); /*  #은 id를 이야기함 */	
+	// });  
+
+</script> 
+<!-- <script type="js/jq01.js"></script> -->
+</head>
+<body>
+<h1 id="title">제목</h1>
+
+</body>
+</html>

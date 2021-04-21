@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>함수호출 </title>
+<script type="text/javascript">
+var num = 1;	//num은 1
+
+function gallery(direct){  //0 받았으면  num은 지금 1, direct는 1
+	if (direct){			//
+		if(num == 8) return;  //num이 지금 1인데 8이면 rreturn한뒤에 쁠쁠, 
+		num++
+	}else {
+		if (num == 1)return;  //num이 1이면 바로 리턴해주고  num은 0이된다.
+		num--;
+	}
+	var imgTag = document.getElementById("photo");  //body를 보고 id가 photo인애를 찾아서, 속성변경 ! src속성을 num(1) jpg를 보여주는걸루
+	imgTag.setAttribute("src", "images/pic_" + num + ".jpg");
+}
+
+</script>
+</head>
+<body>
+<div id ="galleryZone">
+<p><img src = "images/pic_1.jpg" id ="photo" alt=""></p> <!-- 맨처음에 띄워주는 사진! -->
+<p>
+<button onclick="gallery(0)">이전</button> <!-- 이전 누르면 gallery함수 호출하고 매개변수로  0넣어줌 -->
+<button onclick="gallery(1)">다음</button>
+
+</p>
+</div>
+</body>
+</html>

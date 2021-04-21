@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//재귀호출   팩토리얼!!
+	function fac(n) {
+		if (n == 1)
+			return 1;
+		else
+			return n * fac(n - 1) //종료조건!! 진행할수록 반드시 종료조건에 다가가야한다!!!
+	}
+	document.write(fac(5) + "<br>");
+
+	var n = 1000;
+	(function() {
+		alert(n);
+	}());
+	
+/////////////////재귀호출  10진수를 2진수로 변경!!
+/* 	function fac(n){
+		if (n==1) return 1;
+		else return n * fac(n-1);
+	}
+
+	function DecToTwo(n){
+		if (n <2) {
+			document.write(n + "");
+			
+		}else {
+			DecToTwo(Math.floor(n/2));
+			document.write(n%2 + "");
+		}
+	}
+	DecToTwo(11); 
+	//DecTiTwo(11) -> DecToTwo(5) -> DecToTwo(2) -> DecToTwo(1)  순서대로 호출쓰
+										//	 0 <- 1 */
+</script>
+</head>
+<body>
+
+</body>
+</html>

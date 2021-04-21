@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var greenArr = ["교대","방배","강남"];
+	var yellowArr = ["미금","정자","수서"];
+	
+	//데이터 교체방법 1
+	greenArr.splice(2,1,"서초","역삼");   //greenArr  배열에서 2번인덱스부터 1개 삭제후 서초,역삼 넣음 -> 교대,방배,서초,역삼 들어감
+	console.log(greenArr);				//콘솔에 보여주기
+	
+	//데이터 교체방법1 temp같은방법임
+	var data1 = yellowArr.pop();		// data1에 2번배열의 마지막 인덱스데이터 저장 : 수서
+	var data2 = yellowArr.shift();			// data2에 2번배열의 맨앞  인덱스데이터 저장 : 미금
+	
+	yellowArr.push(data2);					// 2번배열의 마지막에 data2에 저장된데이터로 교체 -> 미금,정자,미금
+	console.log(yellowArr);
+	
+	yellowArr.unshift(data1);			//2번 배열의 맨앞을 data1에 저장된 데이터로 교체 -> 수서,정자,미금
+	console.log(yellowArr);;
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
