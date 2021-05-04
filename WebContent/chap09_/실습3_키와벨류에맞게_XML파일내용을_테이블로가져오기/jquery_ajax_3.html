@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js" > </script>
+<script>
+$(function(){
+	$.ajax({
+		url:"dataset.xml",                                
+		success:function(data){
+			var $data = $(data).find("record");
+			if($data.length>0){
+				var tb = $("<table />");
+				for ( var i in data){
+		//		$.each($data,function(idx,obj){  // //idx, obj 오브젝트라고 보면된다
+				
+	//			console.log(obj);
+				var $id=data[i].id;
+				var $first_name=data[i].first_name;
+				var $last_name=data[i].last_name;
+				var $email=data[i].email;
+				var $gender=data[i].gender;
+				
+				
+				
+				var row = $("<tr />").append(
+				$("<td />").text($id),
+				$("<td />").text($first_name),
+				$("<td />").text($last_name),
+				$("<td />").text($email),
+				$("<td />").text($gender)
+				);
+				
+				tb.append(row);
+		}
+			$(".wrap").append(tb);
+				//console.log("idx >>>",idx ,obj);
+			}
+		}
+	});
+});
+
+</script>
+
+</head>
+<body>
+	<div class="wrap"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html> 										  <!-- 버튼에 마우스가 스치면 (가져다대면) 강제적으로 아래에 버튼별 저장해놓은 문구가 출력된다. -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+	
+</script>
+<script>
+$(function(){
+	$("#btn1")
+	.data({"text":"javascript"})
+	.on({
+		"mouseover": overFnc,
+		"mouseout": outFnc
+	});
+
+	$("#btn2")
+	.data({"text":"welcome!"})
+	.on({
+		"mouseover focus": overFnc,
+		"mouseout blur": outFnc
+	});
+
+	function overFnc() {
+		$(".txt").text($(this).data("text"));
+	}
+	function outFnc() {
+		$(".txt").text("");
+	}
+});
+</script>
+
+</head>
+<body>
+	<p>
+		<button id="btn1">버튼1</button>
+	</p>
+	<p>
+		<button id="btn2">버튼1</button>
+	</p>
+	<p class="txt"></p>
+</body>
+</html>

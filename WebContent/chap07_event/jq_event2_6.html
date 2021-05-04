@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js" > </script>
+<script>
+
+
+
+	$(function(){
+		$(".btn_1").on("mouseover focus",function(){alert("HELLO!");
+		});
+		
+	$(document).on("mouseover blur", ".btn2", function(){
+		alert("WELCOME!");
+	});
+	
+	$("p").on("mouseover blur", ".btn_3", function(){
+		alert("jQuery!");
+	});
+	});
+
+</script>
+
+</head>
+<body>
+<div id = "wrap">
+	<p><button class="btn_1"> 버튼1 </button></p>
+	<p><button class="btn_2"> 버튼2 </button></p>
+</div>
+</body>
+</html>

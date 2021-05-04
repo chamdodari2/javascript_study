@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js" > </script>
+<script>
+$(function(){
+	obj ={"id":1,"name":"김상건","gender":false,"age":28};
+/*  	console.log(obj.id);
+	console.log(obj.name);
+	console.log(obj.gender);
+	console.log(obj.age);
+	 */
+	objArr=[
+		{"id":1,"name":"김상건","gender":false,"age":28},
+		{"id":2,"name":"나상건","gender":false,"age":30}
+	]
+		
+	objArr2=[
+		{"id":1,"name":"김상건","gender":false,"age":28, "sub":{"국어":90,"수학":80,"영어":80}},  ////객체 안의  객체넣기
+		{"id":2,"name":"나상건","gender":false,"age":30,"sub":{"국어":80,"수학":60,"영어":50}}
+	]
+		
+	
+/* 	$.each(objArr,function(i,elt){
+		console.log(elt.id);
+		console.log(elt.name);
+		console.log(elt.gender);
+		console.log(elt.age);
+	}); */
+	
+	$.each(objArr2,function(i,elt2){
+		console.log(elt2.id);
+		console.log(elt2.name);
+		console.log(elt2.gender);
+		console.log(elt2.age);
+		console.log(elt2.sub.국어);
+		console.log(elt2.sub.수학);
+		console.log(elt2.sub.영어);
+	});
+});
+
+</script>
+
+</head>
+<body>
+	<div class="wrap"></div>
+</body>
+</html>
