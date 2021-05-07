@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+	
+</script>
+<script>
+	$(function(){
+		$(".btn li").click(function () {
+			$(this).addClass("active"); /*  active 클래스 줘서 해당 css(흰색) 적용되게하기 */
+			$(this).siblings().removeClass('active'); /* 클릭한거 외에는 비활성화되게하기 */
+			
+			
+			
+			/*----------------------- 디자이너가 하는방법---------------
+			
+		    var tab =$(this).attr("data-alt"); 
+			alert(tab);/* 해당 탭을 클릭하면  alert-alt에 있는 값을 가져와서 팝업메세지로 보여준다. 
+		 	$(".tabs div").removeClass("active");/* tabs 밑에 있는 div 다 삭제한다음에 내가 선택한거만 추가하기
+		    $("#" +tab).addClass("active");/* id값을 선택해줘야하는데 여기서 못한다  ("#" +tab). 샾 넣어줘야만 아이디가 선택되서 해당탭의 내용이 보여진다
+			
+			------------------------------------------------------*/
+			
+			
+			/* -------------------- 개발자가 하는 방법-------------------- */
+		 	$(".tabs div").removeClass("active");
+		 	$(".tabs div").eq($(this).index()).addClass("active");
+			/* ------------------------------------------------------*/
+		})
+		
+	});
+</script>
+
+</head>
+<body>
+	<section>
+		<div class="hedding">
+			<h1>
+				<span>웹 개발자 </span>, 탭 메뉴 Tip &Tech
+			</h1>
+			<input type="text" placeholder="What areyou looking for?" />
+		</div>
+		
+		<div class="tab-inner">
+			<ul class="btn">
+				<li class="active">HTML5</li>
+				<li>CSS3</li>
+				<li>JQUERY</li>
+				<li>JAVASCRIPT</li>
+				<li>CSS FRAEWPRLS</li>
+			</ul>
+
+			<div class="tabs">
+				<div class="active">tab1</div>
+				<div>tab2</div>
+				<div>tab3</div>
+				<div>tab4</div>
+				<div>tab5</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

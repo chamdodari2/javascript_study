@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
+body{
+	margin: 0;/* 여백 다 줄여버림 */
+	font-family: 'Noto Sans KR', sans-serif;
+	color:#222; /* 배경색 */
+	line-height: 1.6em; /* 줄간격 */
+	background-color: #f4f4f4; /* 배경색 회색 */
+	font-weight: 300; /*  */
+	/* 정 가운데 배치 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;  /* 모니터의 높이를 100으로 보는거(?) */
+
+	
+}
+.hedding{
+/* 	border:1px solid red; */ 
+	margin-top: 30px;
+}
+section{
+	
+	/* border:1px solid red; */
+	width: 800px;
+	
+}
+.tab-inner{/* 메뉴, btn, tabs */
+/* 	border:1px solid red;  */
+	margin-top: 30px;
+	
+	
+} 
+.btn{
+	list-style: none;
+	padding:0;
+	margin: 0;
+	overflow: hidden;
+	margin-left: 10px;
+}
+.btn li{
+	float:left;
+	/* border:1px solid red; 
+ */	width: 120px;
+	text-align: center;
+	border-right: 1px solid #ddd; 
+	padding:5px; 
+	border-top: 2px solid transparent; /* 메뉴에 마우스 올렸을떄 안움직이게(안올라오게) 하기 */
+}
+.btn li:last-child{
+	width: 170px;
+	border-right: none;	
+}
+.btn li:hover, .btn li.active{/* 마우스 올렸을때 색상 변경  + 마우스로 클릭헀을때도!*/ 
+	background-color: #fff;
+	border-top: 2px solid crimson; 
+}
+.tabs{
+	
+}
+.tabs div{
+	background-color:  #fff; /* 내용있는 부분에 흰색배경주기 */
+	padding:20px;
+	box-sizing: border-box;
+	display: none;
+	height: 250px;
+	
+}
+.tabs div.active{
+	display: block;
+}
+
+
