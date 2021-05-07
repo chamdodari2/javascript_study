@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
+section{
+	border: 1px solid #000;
+	width: 800px; /* 테두리 넓이 픽스 */
+}
+.btn{
+	list-style: none; /* 점 없애기 */
+	padding: 0; /* 왼쪽으로붙이기 */
+	margin:0;
+	/* border: 1px solid red; 빨간테두리로 한번더 영역 나누기 */
+	overflow: hidden;
+}
+.btn li{
+	float: left; /* 이렇게만 하면 빨간테두리가 위에 따로논다 안감싸지고 ㅠ (이유: 자식을 플로우 레프트로둬서 붕뜨는거다. 부모에다가 오버플로우 히든둬야한다 */
+	border: 1px solid #000;
+	background-color: gray; /* 각각 목록 단어별로 칸칸이 나뉘어진다 */
+}
+
+
+/*  li 안에 active */
+.btn li.active{
+	background-color: #fff; 
+}
+.tabs{}
+.tabs div{
+	border:1px solid #000;
+	height: 200px; /* 높이 */
+	display:none;
+}
+
+.tabs div.active{
+	display: block;
+}
