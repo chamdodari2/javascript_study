@@ -70,11 +70,19 @@ section{
 	padding:20px;
 	box-sizing: border-box;
 	display: none;
-	height: 250px;
+	/* height: 250px; 이거 넣어버리면 나중에 내용 길때 글자가 배경보다 삐져나온다 */
 	
 }
 .tabs div.active{
 	display: block;
 }
-
-
+.tabs div h2{ /* 가운데정렬하기 */
+	text-align: center;
+}
+.tabs div img{/* 이미지랑  글자 나란히두기 */
+	float:left;
+	margin-right: 10px;
+}
+.tabs div p{/* 한줄씩 깔끔하게 보여지게하기?? */
+	overflow: hidden; 
+}
