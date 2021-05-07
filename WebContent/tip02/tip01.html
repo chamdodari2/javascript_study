@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>별점주기 with jqury</title>
+<link rel="stylesheet" href="css/style.css">
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js" > </script>
+<script>
+$(function(){
+	$(".stars .fa").click(function(){
+		$(this).addClass("active");     /* 클릭한 자신에게 스타일css에서 설정한대로 노란불 들어오게하기 */
+		$(this).prevAll().addClass("active");  /* 하나 클릭하면 그 앞에별들(형제)에도 불들어오게 하기 */
+		$(this).nextAll().removeClass("active"); /* 클릭했으면 뒷칸에있는 별애들은 지우기 */
+		/* 각 선택되는 별 위치마다 멘트 다르게 뜨게 하기 */
+		var starRate = $(this).index() +1  /* 이미지사진명이 1부터 시작이라서 인덱스번호 +1을 해줘야 일지함 */
+	//	$('.print').text(starRate); /* 이렇게하면 1 2 3 4 5 로 멘트 출력된다 */
+		if(starRate == 1){  //별점 한개 클릭하면
+			$('.print').html('<img src="images/star-lv1.png">' + '별로에요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다 */
+		}else if(starRate == 2){  //별점 두개 클릭하면
+			$('.print').html('<img src="images/star-lv2.png">' + '보통이에요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다 */
+		}else if(starRate == 3){  //별점 세개 클릭하면
+			$('.print').html('<img src="images/star-lv3.png">' + '그냥 그래요')  /* 바디에 있는  아이콘과 텍스트를 이걸로 변경한다 */
+		}else if(starRate == 4){  //별점 네개 클릭하면
+			$('.print').html('<img src="images/star-lv4.png">' + '맘에 들어요')  /* 바디에 있는  아이콘과 텍스트를 이걸로 변경한다 */
+		}else{  //별점 다섯개 클릭하면
+			$('.print').html('<img src="images/star-lv5.png">' + '아주 좋아요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다 */
+		}
+	})
+	
+});
+</script>
+
+</head>
+<body>
+<div class="star-rating" >
+	<div class="stars">
+	<i class="fa fa-star"></i>  <!-- 별 각각 하나 <!-- active -->  
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	<i class="fa fa-star"></i>
+	</div>
+	<div class="print">별점 주실거죠?</div>
+</div>
+</body>
+</html>
