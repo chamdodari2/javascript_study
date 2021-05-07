@@ -14,17 +14,20 @@ $(function(){
 		/* 각 선택되는 별 위치마다 멘트 다르게 뜨게 하기 */
 		var starRate = $(this).index() +1  /* 이미지사진명이 1부터 시작이라서 인덱스번호 +1을 해줘야 일지함 */
 	//	$('.print').text(starRate); /* 이렇게하면 1 2 3 4 5 로 멘트 출력된다 */
-		if(starRate == 1){  //별점 한개 클릭하면
-			$('.print').html('<img src="images/star-lv1.png">' + '별로에요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다 */
+		var notice=['별로에요','보통이에요','그냥그래요','맘에들어요','아주좋아요'];
+		$('.print').html('<img src="images/star-lv'+starRate +'.png">' + notice[starRate-1]);
+	
+/* 		if(starRate == 1){  //별점 한개 클릭하면
+			$('.print').html('<img src="images/star-lv1.png">' + '별로에요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다 
 		}else if(starRate == 2){  //별점 두개 클릭하면
-			$('.print').html('<img src="images/star-lv2.png">' + '보통이에요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다 */
+			$('.print').html('<img src="images/star-lv2.png">' + '보통이에요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다 
 		}else if(starRate == 3){  //별점 세개 클릭하면
-			$('.print').html('<img src="images/star-lv3.png">' + '그냥 그래요')  /* 바디에 있는  아이콘과 텍스트를 이걸로 변경한다 */
+			$('.print').html('<img src="images/star-lv3.png">' + '그냥 그래요')  /* 바디에 있는  아이콘과 텍스트를 이걸로 변경한다 
 		}else if(starRate == 4){  //별점 네개 클릭하면
-			$('.print').html('<img src="images/star-lv4.png">' + '맘에 들어요')  /* 바디에 있는  아이콘과 텍스트를 이걸로 변경한다 */
+			$('.print').html('<img src="images/star-lv4.png">' + '맘에 들어요')  /* 바디에 있는  아이콘과 텍스트를 이걸로 변경한다 
 		}else{  //별점 다섯개 클릭하면
-			$('.print').html('<img src="images/star-lv5.png">' + '아주 좋아요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다 */
-		}
+			$('.print').html('<img src="images/star-lv5.png">' + '아주 좋아요')  /* 바디에 있는 아이콘과 텍스트를 이걸로 변경한다
+		}/* if else문이 많으면 좋지 않아서 위의 배열로 바꾼다 */ 
 	})
 	
 });
