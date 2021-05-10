@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style2.css">
+
+<script  src="https://code.jquery.com/jquery-3.6.0.min.js" > </script>
+
+
+<script>
+	$(function () { 
+		$(".size span,color span").click(function() {/* 저 영역을 클릭했을떄   :컬러영역이랑 사이즈영역임*/
+			
+			$(this).addClass("active"); /* this는 여기에 적용해라!클래스 active 효과 집어넣어라!  */
+			$(this).siblings().removeClass("active"); /* 선택된애 뺴고 나머지애들은 active 효과 떼라 */
+		})
+		
+	})
+
+</script>
+
+</head>
+<body>
+	<div class="item">
+		<img src="images/model-female.png">
+		<div class="detail">
+		<div class="title">
+               <h2><em>Nightgown</em> Women's Designer Wear</h2>
+               <span class="price">$55.99</span>
+           </div>
+           <div class="info">
+               <div class="size">
+                   <label>Sizes</label> 
+                   <span class="active">XS</span>
+                   <span>S</span>
+                   <span>M</span>
+                   <span>L</span>
+                   <span>XL</span>
+               </div>
+               <div class="color">
+                   <label>Colors</label> 
+                   <span class="active"></span><span></span><span></span><span></span><span></span>
+               </div>
+               <span class="like active"></span>
+           </div>
+           <button class="add-cart">Add to Cart</button>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

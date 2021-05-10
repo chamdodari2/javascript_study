@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+
+body{
+font-family: 'Montserrat',sans-serif;
+
+background-color: #eee;
+
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+a{/* 올렸을떄 글자 집어넣기 */
+	text-decoration: none;
+	color: #222;
+	
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+
+/* item */
+
+.item{
+	border-radius: 10px;
+	overflow: hidden;
+	position:relative;  /* 이거 빠지면 모든화면에 흰색가림막 올라오고, 이렇게하면 사진에만 흰색가림막 올라온다 */
+	box-shadow: 0 0 20px rgba(0,0,0,0.164);
+}
+.item img{
+	transition:0.5s;
+}
+.item:hover img{/*  사진에 마우스 올리면 사진 흐려지게하기*/
+	filter: blur(2px);
+}
+
+.detail{ /* 흰색 가림막 */
+	background-color: #f8f8f8; /* 흰색 */
+	position:absolute; /* 이렇게하면 자동으로 한칸에 여러개 존재할수있게????변경된다?? */
+	/* top:0; */
+	/* bottom: -390px; 	 바텀으로부터 -390위치 빼고 흰색으로 가리기 */
+	bottom:-180px; /* 흰색가림막이 바텀으로부터 -550위치빼고 채운다(위의 사진침범하지않는당) */
+	left: 0;
+	width: 100%;  /* 얘까지 들어가면 사진 있던거를 흰색으로 가리게된다 */
+	 height:250px; 
+/* 	height:100%; */
+	transition:0.5s; /*  천천히 애니메이션처럼 시간차로 가리게하기*/
+	padding: 0 20px; /* 좌우여백 */
+	box-sizing:border-box;
+}
+
+.item:hover .detail{ /* item부분에 마우스 올리면  흰색가림막이 공백없이 꽉채움 */
+	bottom:0;
+}
+
+
+
+/* title */
+
+.title{
+	border-bottom:	1px solid #ddd;
+	
+	overflow: hidden;/*자식요소 (.title h2)가 float 속성이 들어가있으므로 크기를 잃어버리므로 overlow:hidden 해줘야한다  */
+	margin-bottom: 10px;
+} 
+.title h2{ /* 줄간격쓰 */
+	font-size: 16px;
+	color: #888;
+	line-height:1.2em; 
+	float:left;  /*왼쪾에두기  */
+}
+.title h2 em{
+	font-style:normal;
+	display:block;
+	color:#000; /* 회색 */
+	margin-bottom: 5px; /* em밑에 ㅇ여백 */
+}
+.title .price{ /* 가격표 */
+	float: right;
+	margin-top: 15px;
+	font-size: 20px;
+	color: crimson;
+}
+
+/* info */
+.info{
+	position:relative; /*렐러티브 둔다는건 안에 앱솔루트 두겠쥐 */
+}
+
+/* size 제목글자! */
+.size{ /* 얘는 원래 인라인 요소인데 블럭으로 바꾸면 아래로 내리간다. 요즘은 br태그 잘 안쓰고 이래바꿔야한다 */
+	margin-bottom: 10px;
+}
+.size label, 
+.color label{
+	display:block;
+	
+}
+
+
+.size span{ /* 사이즈 제목밑에 있는 찐사이즈 선택사항 */
+	font-size:12px;
+ 	/* background-color: #000;   까만배경에
+	color:#fff; 흰글씨  */
+	margin-left:  5px;
+	width:15px; /* 이거두개 안먹히는이유. sapn은 inling이라서.. */
+	height: 15px;/* 이거두개 안먹히는이유. sapn은 inling이라서..  -->  span 디스플레이  play: inline-block; 으로 바꿔줘야함 */ 
+	display: inline-block;
+	text-align: center;
+	line-height: 15px;
+	padding:2px;
+	border-radius: 3px; /* 약간 둥글둥글허게 */
+	cursor: pointer;/* 커서가 가면 손모양으로 바뀌게 하기 */
+}
+
+.size sapn.active, 
+.size sapn:hover{ /*  Xs라고 적힌부분 */
+border-radius: 50%;
+	color:#fff; /* 흰글씨  */
+	background-color: #000;  /* 까만배경 */
+}
+.active{ /*  Xs라고 적힌부분 */
+	color:#fff; /* 흰글씨  */
+	background-color: #000;  /* 까만배경 */
+}
+
+/*color */
+
+.color label{
+	display: block;
+	margin: 5px;
+}
+.color span.active,
+.color span:hover{ /* 컬러 선택하면 효과주기 .  span에 active 라는 클래가 있으면 효과를 줘라*/
+border-radius: 50%;
+	
+}
+.color span{ /* 컬러선택칸 */
+	border: 1px solid #000;
+	width:17px; /* 이거두개 안먹히는이유. sapn은 inling이라서.. */
+	height: 17px;/* 이거두개 안먹히는이유. sapn은 inling이라서..  -->  span 디스플레이  play: inline-block; 으로 바꿔줘야함 */
+	display: inline-block; 
+	cursor: pointer;/* 커서가 가면 손모양으로 바뀌게 하기 */
+	margin-right: 5px;
+	
+}
+.color span:nth-of-type(5){
+	background-color:#c0c0c0;
+}
+.color span:nth-of-type(4){
+	background-color:#008080;
+}
+.color span:nth-of-type(3){
+	background-color:#00ffff;
+}
+.color span:nth-of-type(2){
+	background-color:#ff80c0;
+}
+.color span:nth-of-type(1){
+	background-color:#000080;
+}
+
+.add-cart{
+	border:1px solid #ddd;
+	width:100%;
+	padding:7px;
+	background-color: #fff;
+	margin-top: 10px;
+	outline: none;
+	
+}
+.add-cart:hover{ /* 장바구니에 마우스 올리면 효과주기 */
+	background-color: #000;
+	color:#fff;
+}
+
+/* like */
+.like{
+	cursor: pointer;
+}
+.like:before{ /* 좋아요아이콘 테두리모양:하트 */
+	content:'\f08a';
+	font-family: fontawesome;
+	color: #bbb;
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+
+
+.like active:hover{ /* 좋아요아이콘 테두리모양:하트 */
+content:'\f004';
+color: #400040;
+	
+}
+
+/* .like.active:before{좋아요 아이콘에 색 채우기
+	content:'\f004';
+	color: crimson;
+	
+} */
+
+.color span,
+.size span{
+		transition:0.5s; 
+	
+}
+
+

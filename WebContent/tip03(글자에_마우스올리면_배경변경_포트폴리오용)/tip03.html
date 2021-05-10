@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+	
+</script>
+<script>
+	$(function() {/* 마우스 누르면 배경사진 변경되게하기 */
+
+		
+		$('.navi li').on("mouseover focusin",function () {
+			var idx=$(".navi li").index(this) +1;
+			var changeImage= $(this).attr("data-image"); 
+		/* 	alert(changeImae); */
+		$(".photo").css({
+			'background-image':'url(' + changeImage +')'  /* 바로 이미지폴더로 접근가능 */
+		
+		});
+			
+	$('.navi li').on("mouseleave focusout",function () {
+		$(".photo").css({
+			'background-image' : ''
+			
+			});
+		
+		});
+	});
+	
+	
+	
+});
+</script>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<div class="container">
+		<ul class="navi">
+			<li data-image="images/portrait-01.jpg"><a href="#none" data-text="about">about</a></li> <!-- data-text="about"요 글자에다가 글자색 덮어씌우기 -->
+			<li data-image="images/portrait-02.jpg"><a href="#none" data-text="instructor">instructor</a></li>
+			<li data-image="images/portrait-03.jpg"><a href="#none" data-text="class">class</a></li>
+			<li data-image="images/portrait-04.jpg"><a href="#none" data-text="location">location</a></li>
+		</ul>
+		<div class="photo"></div>
+	</div>
+</body>
+</html>

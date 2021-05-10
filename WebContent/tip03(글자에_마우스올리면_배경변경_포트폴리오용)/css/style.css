@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+
+body{
+	margin:  0;
+	font-family:'Montserrat';
+	/* background: #000; 테스트용 (글자흰색이라서 보이게하려면) */
+	
+	
+}
+
+.navi{
+	/* 정 중앙에 오게하기 */
+	position: absolute; /* 모니터 절대값을 계산해서 지정 */
+	top: 50%; 	/* 상단으로부터  */
+	left:50%;	/* 왼쪽으로부터 */
+	transform: translate(-50%,-50%); /* 이래되면 정중앙에 온다. 원래화면에 */
+	z-index:100; /* 위로배치할떄?? */
+	list-style: none; 
+	padding:0;
+	margin:10;/* . 없겧가ㅣ?? */
+}
+.navi li{}
+.navi li a{
+	
+	font-size:  4em;
+	text-decoration : none;
+	color: #fff;
+	position: relative; /* .navi li a:before{}를 담고있는 부모이기 때문이기때문에 relative로 두고, 자식은 apsolute로 둬야 제대로 딱맞게 가서 붙는다 */
+	
+}
+.navi li a:after{/* 마우스 올렸을때 글자색 바뀌게하기   before를 하든 상관은 없다*/
+	position: absolute;
+	color:yellowgreen;
+	top:0;				/* 위치를 뜻함. 똑같은 위치에 덮어써야하기때문에 이동안시킴 */
+	left:0;
+	width:10%;
+	overflow:hidden; /* 이걸 주면 지정너비인 width:10% 에 맞게끔 잘라내버린다 */
+	content:attr(data-text); /* 어떤내용이냐면 data-text에 있는 내용을 쓰겠다는뜻 */	
+	transition:0.5s;/* 애니메이션처럼 천천히 바뀌게하기 */
+}
+
+.navi li a:hover:after{/*   위에서 10%였던 글자색상을 hover 됐을떄(마우스올렸을떄) 나머지도도 채워지게하기 */
+	width:100%
+	
+} 
+.navi li a :focus:after{ /* 포커스 받았을때도 배경이미지 변경되게하기 */
+	width:100%;
+}
+
+
+.photo{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+/* 	background: url("../images/portrait-initial.jpg")no-repeat center center;  현재  css파일의 위치폴더에서 밖으로 한칸 나가야해서 .. 붙인당 + 이미지를 반복하지말고, 수직가운데, 수평가운데로 설정 */
+ 	background: url("../images/portrait-initial.jpg"); /* 현재  css파일의 위치폴더에서 밖으로 한칸 나가야해서 .. 붙인당 + 이미지를 반복하지말고, 수직가운데, 수평가운데로 설정 */
+	background-repeat:no-repeat;/* 위에 한줄대신 이거 두줄로 나눠서적어도된다 */
+	background-position:center center;/* 위에 한줄대신 이거 두줄로 나눠서적어도된다 */
+	background-size: cover;
+}
+
+
+
