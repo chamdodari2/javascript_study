@@ -22,6 +22,12 @@
 			$(this).siblings(".desc").stop().slideUp();/* 여러번 올라갔따내려갔다 하는걸 스탑시켜준다 :클릭 여러번 했을시 밀려있다가 다다다ㅏ 계속 몰아서 열렸다 닫혔다 하는걸 막고 삭제시켜준다. */
 
 			$(this).next().stop().slideDown();
+			
+			/* 
+			var dataImage = $(this).attr("data-image");
+			$(".image img").attr("src",dataImage);
+		});
+			*/
 		});
 
 	});
@@ -39,8 +45,8 @@
 			</div>
 			<div class="content">
 				<div class="accordion">
-					<div class="title">하드코딩(Hard Coding) 실력이 진짜 퍼블리싱 실력</div>
-					<div class="desc">
+					<div class="title active">하드코딩(Hard Coding) 실력이 진짜 퍼블리싱 실력</div>
+					<div class="desc active">
 						제이쿼리 플러그인 사용해서 역동적이고 화려하게 꾸미는 퍼블리싱은 진짜 퍼블리싱이 아닙니다. <br> <br>
 						진짜 퍼블리싱 실력은 HTML로 레이아웃 설계를 꼼꼼히 잘하고, CSS로 배치와 상세 디자인하고, 직접 작성한
 						제이쿼리(JQUERY)로 상호작용까지 만들 수 있는 것이 진짜 퍼블리싱 실력입니다.
