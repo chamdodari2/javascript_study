@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body{
+	
+	font-family: 'Noto Sans KR',sans-serif;
+	color:#222;
+	margin: 0;
+	font-weight: 300;
+	
+}
+a{
+	text-decoration: none;
+	color:#222;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+	
+}
+section{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:100vh;
+	
+}
+section article{
+/* 	border: 1px solid red; */
+	width:980px;
+	height:500px;/* 임시 부여 */
+}
+.heading{
+	/* border:  1px solid #000;
+	height:100px; 임시 부여 */
+	text-align: center;
+}
+.heading span{
+	color: crimson;
+	font-size: 24px;
+	
+}
+.heading h1{
+	font-size: 36px;
+	margin-top: 10px; 
+	
+}
+.heading h1 em{
+	font-style: nomal;
+/* 	border:1px solid #000; */
+	position: relative;
+	
+	
+}
+.heading h1 em:after{
+	position:absolute;
+	content:url("../images/logo-kakao.png");
+	top:-25px;
+	right:-30px;
+}
+/* content */
+.content{}
+.content > div{/* 꺽쇠있으며ㅑㄴ 이거만 선택하게 할수잇다. 왼쪽글만 보여지다가 클릭하면 나오게하기. 꺽쇠는 바로밑의 자식을 이야기함 */
+	/* 	border:  1px solid blue; */ 
+		width:50%;
+		float: left;
+		height:400px; /* 보더 테두리때문에 정확하게 일치안한다. 맞추게하려면 아랫줄의  박스사이징 필요 */
+		box-sizing: border-box;
+	
+}
+.accordion{}
+.title{
+	border:1px solid #ddd;
+	padding:5px;
+	border-radius:3px;
+	cursor:pointer;
+	padding-left:15px;
+	
+	/* margin:  */
+}
+.title:after{
+	content:'\f105';
+	font-family: fontawesome;
+	float:right;
+	margin-right: 5px;
+	margin-top: 3px;
+	transition:0.5s;
+}
+.title.active:after{
+	transform:rotate(90deg);
+	color:orange;
+}
+.title:hover,
+.title.active{/*  펼쳐졌다가 줄여졌다가*/ /* 호버와 액티브 둘중하나있을떄 */
+	background-color: #203049;
+	color:#fff;
+	
+}
+.desc{
+	padding:20px;
+	display: none;
+}
+.desc.active{
+	display:block;
+}
+.image{}

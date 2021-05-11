@@ -10,13 +10,17 @@
 
 <script>
 	$(function () { 
-		$(".size span,color span").click(function() {/* 저 영역을 클릭했을떄   :컬러영역이랑 사이즈영역임*/
+		$(".size span, .color span").click(function() {/* 저 영역을 클릭했을떄   :컬러영역이랑 사이즈영역임*/
 			
 			$(this).addClass("active"); /* this는 여기에 적용해라!클래스 active 효과 집어넣어라!  */
 			$(this).siblings().removeClass("active"); /* 선택된애 뺴고 나머지애들은 active 효과 떼라 */
-		})
+		});
+		$(".like").click(function () {
+			$(this).toggleClass("active");
+			
+		})    
 		
-	})
+	});
 
 </script>
 
@@ -42,7 +46,7 @@
                    <label>Colors</label> 
                    <span class="active"></span><span></span><span></span><span></span><span></span>
                </div>
-               <span class="like active"></span>
+               <span class="like"></span>
            </div>
            <button class="add-cart">Add to Cart</button>
 		</div>

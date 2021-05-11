@@ -142,6 +142,10 @@ border-radius: 50%;
 	display: block;
 	margin: 5px;
 }
+
+
+
+
 .color span.active,
 .color span:hover{ /* 컬러 선택하면 효과주기 .  span에 active 라는 클래가 있으면 효과를 줘라*/
 border-radius: 50%;
@@ -201,17 +205,13 @@ border-radius: 50%;
 
 
 
-.like active:hover{ /* 좋아요아이콘 테두리모양:하트 */
-content:'\f004';
-color: #400040;
-	
-}
 
-/* .like.active:before{좋아요 아이콘에 색 채우기
+
+ .like.active:before{좋아요 아이콘에 색 채우기
 	content:'\f004';
 	color: crimson;
 	
-} */
+} 
 
 .color span,
 .size span{
